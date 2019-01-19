@@ -1,0 +1,33 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-md fixed-top">
+  <%= link_to Rails.configuration.application_name, root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Messages</a>
+      </li>
+    </ul>
+    <div class="pull-right">
+      <ul class="navbar-nav">
+        <%- if user_signed_in? %>
+          <li>
+            <%= link_to current_user.email, edit_user_registration_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <%- else %>
+          <li>
+            <%= link_to 'Sign in', new_user_session_path, class: "nav-link" %>
+          </li>
+          <li>
+            <%= link_to 'Sign up', new_user_registration_path, class: "nav-link" %>
+          </li>
+        <%- end %>
+      </ul>
+    </div>
+  </div>
+</nav>
