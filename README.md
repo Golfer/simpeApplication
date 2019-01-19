@@ -1,24 +1,26 @@
 # README
+Rails 5.1
+Ruby 2.5.3
+Heroku APP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Setup DB
+export TESTAPP_HOST='localhost'
+export TESTAPP_NAME='db_name'
+export TESTAPP_USERNAME='sample user'
+export TESTAPP_PASSWORD='sample passwd'
 
-Things you may want to cover:
 
-* Ruby version
+rake db:create db:migrate
 
-* System dependencies
+````
+https://app-test-golfer.herokuapp.com/
+````
+Setup local env for example: 
+````
+https://gorails.com/setup/ubuntu/18.10
+````
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Start local
+````
+rails s
+````
