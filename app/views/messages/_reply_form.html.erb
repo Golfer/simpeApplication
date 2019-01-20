@@ -1,0 +1,11 @@
+<div class="panel-body">
+  <h3>Answer for a Question</h3>
+  <%= form_for @message, url: reply_message_path(@message),  html: {class: 'form-horizontal', role: 'form'} do |f| %>
+    <div class="form-group field" >
+      <%= f.text_area :reply, class: 'form-control', cols: 40, rows: 10, required: true, autofocus: true, placeholder: "Reply"  %>
+    </div>
+    <div class="form-group field" >
+      <%== f.submit 'Reply', class: 'form-control btn btn-primary submit-button' %>
+    </div>
+  <%- end %>
+</div>

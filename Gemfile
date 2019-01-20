@@ -19,6 +19,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'font-awesome-sass', '~> 5.0', '>= 5.0.13'
+gem 'responders', '~> 2.4.0'
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'

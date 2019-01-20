@@ -1,0 +1,43 @@
+<%-if messages.count > 0 %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">
+          Title
+        </th>
+        <th scope="col">
+          Message
+        </th>
+        <th scope="col">
+          Time request
+        </th>
+        <%-if current_user.present? && current_user.is_admin? %>
+          <th scope="col">
+            Action
+          </th>
+        <%-end %>
+      </tr>
+    </thead>
+    <tbody>
+      <%-if messages.count > 0 %>
+        <%- messages.each do |message| %>
+          <tr>
+            <th scope="row"><%=message.id %></th>
+            <td><%=message.title %></td>
+            <td><%=message.text %></td>
+            <td><%=message.created_at.strftime('%F %T') %></td>
+            <%-if current_user.present? && current_user.is_admin? %>
+              <td>
+                <%= link_to 'Reply', reply_message_path(message), class: 'btn btn-success' %>
+                <%= link_to 'Delete', message_path(message), method: :delete, class: 'btn btn-danger' %>
+              </td>
+            <%-else %>
+              <td><%=message&.reply %></td>
+            <%-end %>
+          </tr>
+        <%-end %>
+      <%-end %>
+    </tbody>
+  </table>
+<%- end %>

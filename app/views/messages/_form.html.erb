@@ -1,0 +1,16 @@
+<div class="panel-body">
+  <h3>Create request to Support</h3>
+  <%= form_for @message, url: messages_path,  html: {class: 'form-horizontal', role: 'form'} do |f| %>
+    <div class="form-group field" >
+      <%= f.label :title, 'Title request', class: 'form-label'  %>
+      <%= f.text_field :title, class: 'form-control'  %>
+    </div>
+    <div class="form-group field" >
+      <%= f.label :text, 'Full description', class: 'form-label'  %>
+      <%= f.text_area :text, class: 'form-control', cols: 40, rows: 10  %>
+    </div>
+    <div class="form-group field" >
+      <%== f.submit 'Create request', class: 'form-control btn btn-primary submit-button' %>
+    </div>
+  <%- end %>
+</div>

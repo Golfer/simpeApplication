@@ -8,7 +8,11 @@ Bundler.require(*Rails.groups)
 
 module SimpleAppTest
   class Application < Rails::Application
-    config.application_name = "#{Rails.application.class.parent_name.upcase} [#{Rails.env.chars.first.upcase}]"
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
+
+    config.application_name = "Support System[#{Rails.env.chars.first.upcase}]"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
