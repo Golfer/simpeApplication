@@ -10,6 +10,9 @@
           Message
         </th>
         <th scope="col">
+          User
+        </th>
+        <th scope="col">
           Time request
         </th>
         <%-if current_user.present? && current_user.is_admin? %>
@@ -26,6 +29,7 @@
             <th scope="row"><%=message.id %></th>
             <td><%=message.title %></td>
             <td><%=message.text %></td>
+            <td><%=message.user.full_name.blank? ? message.user.email : message.user.full_name%></td>
             <td><%=message.created_at.strftime('%F %T') %></td>
             <%-if current_user.present? && current_user.is_admin? %>
               <td>

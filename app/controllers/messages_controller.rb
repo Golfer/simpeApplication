@@ -46,7 +46,7 @@ class MessagesController < ApplicationController
     respond_to do |format|
       format.html do
         flash[:success] =
-        redirect_to root_path, notice: "Message successfully destroyed."
+        redirect_to root_path, notice: 'Message successfully destroyed.'
       end
     end
   end
