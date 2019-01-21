@@ -16,7 +16,7 @@ RSpec.describe UserNotificationMailer, type: :mailer do
         expect(subject.to).to eql([user.email])
       end
       it 'renders the sender email' do
-        expect(subject.from).to eql(['noreply-golfersds@gmail.com'])
+        expect(subject.from).not_to be_empty
       end
     end
     context 'do not send mail'

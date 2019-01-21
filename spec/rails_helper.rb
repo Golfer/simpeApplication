@@ -14,6 +14,7 @@ if ENV['RAILS_ENV'] == 'test'
     add_filter '/app/channels/*'
     add_filter '/app/mailers'
     add_filter '/app/views'
+    SimpleCov.result.format!
   end
 end
 require File.expand_path('../config/environment', __dir__)
